@@ -1148,14 +1148,13 @@
 
     function addJudgementVisualization(judgementSet,selectedObj) {
             if (!selectedObj) return;
-
             judgementSet.forEach((judgement, index) => {
                 // Determine color based on internal logic mapping to log styles
                 let colorHex = 0xffffff;
                 if (judgement.logType === 'reflection') colorHex = 0xfacc15; // yellow for INSIGHT
                 else if (judgement.logType === 'focus') colorHex = 0x00ffcc; // cyan/white for JUDGEMENT
                 else if (judgement.logType === 'metastate') colorHex = 0xff00ff; // magenta for METASTATE
-
+                
                 if(selectedObj.type==='TOPIC'){
                     renderJudgementTopicLabels(selectedObj,judgement,colorHex,index);
                 } else if(selectedObj.type==='Q'||selectedObj.type==='A'){
@@ -1247,7 +1246,7 @@
                         }
                     }
                 });
-                if(judgement.length===0){debugger;}
+                // if(judgementSet.length===0){debugger;}
                  addJudgementVisualization(judgementSet,selectedObj); 
 
 
